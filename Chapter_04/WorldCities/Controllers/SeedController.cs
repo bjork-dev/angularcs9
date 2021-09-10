@@ -99,8 +99,7 @@ namespace WorldCities.Controllers
             // into the Database (it will be empty on first run). 
             var cities = _context.Cities
                 .AsNoTracking()
-                .ToDictionary(x => (
-                    Name: x.Name,
+                .ToDictionary(x => (x.Name,
                     Lat: x.Lat,
                     Lon: x.Lon,
                     CountryId: x.CountryId));
